@@ -13,7 +13,7 @@ struct CalendarView: View {
                         if let event = viewModel.eventForCurrentTeam(), viewModel.isEventTimeSlot(event: event, time: time, isHour: isHour) {
                             Rectangle()
                                 .fill(Color.blue.opacity(0.3))
-                                .frame(height: isHour ? 30 : 15)
+                                .frame(height: isHour ? 45 : 15)
                         }
                     }
                     .frame(height: isHour ? 30 : 15)

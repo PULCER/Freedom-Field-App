@@ -18,6 +18,7 @@
 		431717912B522851001346A9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431717902B522851001346A9 /* Model.swift */; };
 		431717932B52299A001346A9 /* TimeSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431717922B52299A001346A9 /* TimeSlotView.swift */; };
 		431717962B522DD8001346A9 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431717952B522DD8001346A9 /* EventView.swift */; };
+		4342674D2B52558100F14FD5 /* TimeCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4342674C2B52558100F14FD5 /* TimeCardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		431717902B522851001346A9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		431717922B52299A001346A9 /* TimeSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotView.swift; sourceTree = "<group>"; };
 		431717952B522DD8001346A9 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		4342674C2B52558100F14FD5 /* TimeCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				431717922B52299A001346A9 /* TimeSlotView.swift */,
 				431717952B522DD8001346A9 /* EventView.swift */,
 				4317178E2B5224F3001346A9 /* TeamSelectorView.swift */,
+				4342674C2B52558100F14FD5 /* TimeCardsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				431717912B522851001346A9 /* Model.swift in Sources */,
 				431717932B52299A001346A9 /* TimeSlotView.swift in Sources */,
 				4317178F2B5224F3001346A9 /* TeamSelectorView.swift in Sources */,
+				4342674D2B52558100F14FD5 /* TimeCardsView.swift in Sources */,
 				431717962B522DD8001346A9 /* EventView.swift in Sources */,
 				4317178D2B5224D5001346A9 /* ClockInButtonView.swift in Sources */,
 				431717872B522277001346A9 /* FreedomViewModel.swift in Sources */,

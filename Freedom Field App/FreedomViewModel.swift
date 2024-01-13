@@ -3,12 +3,57 @@ import Foundation
 class FreedomViewModel: ObservableObject {
     @Published var isClockedIn = false
     @Published var selectedTeam: String = ""
+    @Published var clockInTime: Date?
+    @Published var elapsedTime = "00:00:00"
+    var timer: Timer?
+    @Published var timeCards: [TimeCardEntry] = []
 
     var events: [Event] = [
         Event(team: "Team A", startTime: "8 AM", endTime: "12 PM"),
         Event(team: "Team B", startTime: "9 AM", endTime: "5 PM"),
         Event(team: "Team C", startTime: "6 AM", endTime: "7 PM")
     ]
+    
+    func toggleClockIn() {
+           isClockedIn.toggle()
+           if isClockedIn {
+               clockInTime = Date()
+               startTimer()
+           } else {
+               if let clockInTime = clockInTime {
+                   let duration = Date().timeIntervalSince(clockInTime)
+                   let newEntry = TimeCardEntry(teamName: selectedTeam, clockInTime: clockInTime, clockOutTime: Date(), duration: duration)
+                   timeCards.append(newEntry)
+               }
+               stopTimer()
+           }
+       }
+    
+    func submitTimeCards() {
+            timeCards.removeAll()
+        }
+
+      private func startTimer() {
+          timer?.invalidate()
+          timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+              self?.updateElapsedTime()
+          }
+      }
+
+      private func stopTimer() {
+          timer?.invalidate()
+          timer = nil
+          elapsedTime = "00:00:00"
+      }
+
+      private func updateElapsedTime() {
+          guard let clockInTime = clockInTime else { return }
+          let timeInterval = Date().timeIntervalSince(clockInTime)
+          let hours = Int(timeInterval) / 3600
+          let minutes = Int(timeInterval) / 60 % 60
+          let seconds = Int(timeInterval) % 60
+          elapsedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+      }
 
     func eventForCurrentTeam() -> Event? {
         events.first { $0.team == selectedTeam }

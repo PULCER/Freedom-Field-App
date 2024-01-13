@@ -16,3 +16,12 @@ struct Event {
         return (duration.minute ?? 0) / 30
     }
 }
+
+struct TimeCardEntry: Identifiable {
+    let id = UUID()
+    var teamName: String
+    var clockInTime: Date
+    var clockOutTime: Date?
+    var duration: TimeInterval?
+}
+
