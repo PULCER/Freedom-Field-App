@@ -19,6 +19,14 @@ struct MainView: View {
             }
 
             Spacer()
+
+            HStack {
+                Button("TimeCards") {
+                }
+                Spacer()
+                Button("Settings") {
+                }
+            }.padding()
         }
     }
 }
