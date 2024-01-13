@@ -35,13 +35,14 @@ class FreedomViewModel: ObservableObject {
 
     func generateTimeSlots() -> [(String, Bool)] {
         var slots = [(String, Bool)]()
-        for hour in 5..<22 {
-            let hourString = "\(hour <= 12 ? hour : hour - 12) \(hour < 12 ? "AM" : "PM")"
-            slots.append((hourString, true))  // True for full hour
-            slots.append(("", false))  // False for half hour
+        for hour in 0..<24 {
+            let hourString = "\(hour == 0 || hour == 12 ? 12 : hour % 12) \(hour < 12 ? "AM" : "PM")"
+            slots.append((hourString, true))
+            slots.append(("", false))
         }
         return slots
     }
+
 
     func isEventTimeSlot(event: Event, time: String, isHour: Bool) -> Bool {
         let eventStart = minutesSince5AM(from: event.startTime)

@@ -1,12 +1,4 @@
-//
-//  EventView.swift
-//  Freedom Field App
-//
-//  Created by Anthony Howell on 1/12/24.
-//
-
 import SwiftUI
-
 
 struct EventView: View {
     var event: Event
