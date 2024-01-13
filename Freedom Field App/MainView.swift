@@ -3,7 +3,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var viewModel = FreedomViewModel()
     @State private var showingTimeCards = false
-
+//test
     var body: some View {
         VStack {
             HStack {
