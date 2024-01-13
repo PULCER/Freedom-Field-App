@@ -3,7 +3,6 @@ import SwiftUI
 struct TimeSlotView: View {
     let time: String
     var isHour: Bool
-    var isCurrentTime: Bool = false
 
     var body: some View {
         VStack {
@@ -16,7 +15,7 @@ struct TimeSlotView: View {
                 }
                 
                 Rectangle()
-                    .fill(isCurrentTime ? Color.red : (isHour ? Color.gray : Color.clear))
+                    .fill(isHour ? Color.gray : Color.clear)
                     .frame(height: isHour ? 2 : 1)
                 Spacer()
             }

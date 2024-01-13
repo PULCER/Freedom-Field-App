@@ -33,6 +33,20 @@ class FreedomViewModel: ObservableObject {
         return (hours - 5) * 60 + minutes
     }
 
+    
+    func minutesSinceMidnight(from time: String) -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+
+        guard let date = formatter.date(from: time) else { return 0 }
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute], from: date)
+        let hours = components.hour ?? 0
+        let minutes = components.minute ?? 0
+
+        return hours * 60 + minutes
+    }
+
     func generateTimeSlots() -> [(String, Bool)] {
         var slots = [(String, Bool)]()
         for hour in 0..<24 {
@@ -41,6 +55,12 @@ class FreedomViewModel: ObservableObject {
             slots.append(("", false))
         }
         return slots
+    }
+    
+    func yPositionForCurrentHour(in totalHeight: CGFloat) -> CGFloat {
+        let currentHour = Calendar.current.component(.hour, from: Date())
+        let heightPerHour: CGFloat = totalHeight / 24  // Total height divided by 24 hours
+        return CGFloat(currentHour) * heightPerHour
     }
 
 
