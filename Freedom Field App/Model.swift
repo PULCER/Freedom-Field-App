@@ -22,6 +22,16 @@ struct TimeCardEntry: Identifiable {
     var teamName: String
     var clockInTime: Date
     var clockOutTime: Date?
-    var duration: TimeInterval?
+    var duration: TimeInterval? {
+        didSet {
+            // Adjust clockOutTime based on the new duration
+            if let duration = duration {
+                clockOutTime = Date(timeInterval: duration, since: clockInTime)
+            }
+        }
+    }
+    var isEditable: Bool = false
 }
+
+
 
