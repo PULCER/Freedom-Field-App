@@ -2,7 +2,7 @@ import Foundation
 
 class FreedomViewModel: ObservableObject {
     @Published var isClockedIn = false
-    @Published var selectedTeam: String = "Team A" 
+    @Published var selectedTeam: String = "" 
 
     var events: [Event] = [
         Event(team: "Team A", startTime: "8 AM", endTime: "12 PM"),

@@ -67,8 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				431717772B522175001346A9 /* Freedom_Field_AppApp.swift */,
-				431717862B522277001346A9 /* FreedomViewModel.swift */,
 				431717882B52228E001346A9 /* MainView.swift */,
+				431717862B522277001346A9 /* FreedomViewModel.swift */,
 				431717942B5229B7001346A9 /* Views */,
 				431717902B522851001346A9 /* Model.swift */,
 				4317177B2B522176001346A9 /* Assets.xcassets */,

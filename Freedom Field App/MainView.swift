@@ -6,7 +6,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             HStack {
-                TeamSelectorView { team in
+                TeamSelectorView(selectedTeam: viewModel.selectedTeam) { team in
                     viewModel.selectedTeam = team
                 }
                 Spacer()
